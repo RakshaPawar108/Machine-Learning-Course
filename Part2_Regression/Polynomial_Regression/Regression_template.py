@@ -31,9 +31,26 @@ print("Y_train: ", Y_train)
 print("------------------------")
 print("Y_test: ", Y_test)'''
 
+# """# Feature Scaling
+# print("----------------------Feature Scaling ----------------------")
+# # We can see in the dataset that the age and salary columns are not on the same scale ie age columns goes from 27 to 40 and salary column goes from 40k to 79k. This can cause problems in the ML models.
+# from sklearn.preprocessing import StandardScaler
+
+# sc_X = StandardScaler()
+# X_train = sc_X.fit_transform(X_train)
+# X_test = sc_X.transform(X_test)
+# print("X_train: ", X_train)
+# print("-----------------------")
+# print("X_test: ", X_test)
+# print("-----------------------")"""
+
+
 
 # Fitting Regression Model to the dataset 
 # Create a new regressor
+# 10 will be changed with the respective object later
+
+regressor = 10   
 
 # Predicting a new result 
 
