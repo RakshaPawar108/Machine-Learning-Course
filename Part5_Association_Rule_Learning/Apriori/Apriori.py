@@ -22,7 +22,7 @@ for i in range(0, 7501):
 # print("---------A list of lists for the apriori algorithm---------")
 # print(transactions)
 
-# Training Apriori on the dataset w
+# Training Apriori on the dataset 
 from apyori import apriori
 rules =  apriori(transactions = transactions, min_support = 0.003, min_confidence = 0.2, min_lift = 3, min_length = 2)
 
