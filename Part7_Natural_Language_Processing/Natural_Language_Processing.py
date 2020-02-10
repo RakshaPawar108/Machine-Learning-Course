@@ -4,7 +4,11 @@
 # Importing the libraries
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import BernoulliNB
+from sklearn.naive_bayes import CategoricalNB
+from sklearn.naive_bayes import ComplementNB
 from sklearn.metrics import confusion_matrix
 import numpy as np
 import pandas as pd
@@ -82,7 +86,11 @@ print(Y_test)
 
 # Fitting the classifier to the training set
 
-classifier = GaussianNB()
+# classifier = GaussianNB()
+# classifier = MultinomialNB()
+# classifier = BernoulliNB()
+# classifier = CategoricalNB()
+classifier = ComplementNB()
 classifier.fit(X_train, Y_train)
 
 
@@ -103,21 +111,22 @@ TP, TN, FP, FN = cm[1][1], cm[0][0], cm[0][1], cm[1][0]
 
 # Computing the Accuracy
 accuracy = (TP + TN)/(TP + TN + FP + FN)      #(TP + TN)/ (TP+TN+FP+FN)
-print("----------Accuracy-----------")
-print(accuracy)
+
 
 # Computing the Precision   (Measuring Exactness)
 precision = TP/(TP + FP)   #TP / (TP + FP)
-print("--------Precision------------")
-print(precision)
+
 
 # Computing the Recall (Measuring Completeness)
 recall = TP/(TP + FN)       #TP / (TP + FN)
-print("----------Recall------------")
-print(recall)
+
 
 # Computing the F1 Score (Compromise between precision and recall)
 f1_score = (2 * precision * recall)/(precision + recall)
-print("-------F1 Score------------")
-print(f1_score)
+
+
+print("Accuracy:", accuracy)
+print("Precision:", precision)
+print("Recall:", recall)
+print("F1 Score:", f1_score)
 
