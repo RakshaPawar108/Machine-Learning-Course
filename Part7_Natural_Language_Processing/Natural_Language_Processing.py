@@ -99,9 +99,25 @@ cm = confusion_matrix(Y_test, Y_pred)
 print("----------------Confusion Matrix------------")
 print(cm)
 
+TP, TN, FP, FN = cm[1][1], cm[0][0], cm[0][1], cm[1][0]
+
 # Computing the Accuracy
-accuracy = (55-91)/200
+accuracy = (TP + TN)/(TP + TN + FP + FN)      #(TP + TN)/ (TP+TN+FP+FN)
 print("----------Accuracy-----------")
 print(accuracy)
 
+# Computing the Precision   (Measuring Exactness)
+precision = TP/(TP + FP)   #TP / (TP + FP)
+print("--------Precision------------")
+print(precision)
+
+# Computing the Recall (Measuring Completeness)
+recall = TP/(TP + FN)       #TP / (TP + FN)
+print("----------Recall------------")
+print(recall)
+
+# Computing the F1 Score (Compromise between precision and recall)
+f1_score = (2 * precision * recall)/(precision + recall)
+print("-------F1 Score------------")
+print(f1_score)
 
