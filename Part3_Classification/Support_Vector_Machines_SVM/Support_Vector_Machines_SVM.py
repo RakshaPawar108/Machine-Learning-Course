@@ -43,7 +43,7 @@ print("-----------------------")
 # Fitting the classifier to the training set
 from sklearn.svm import SVC
 
-classifier = SVC(kernel = 'sigmoid', random_state = 0)
+classifier = SVC(kernel = 'linear', random_state = 0)
 classifier.fit(X_train, Y_train)
 
 # Predicting the test set results
